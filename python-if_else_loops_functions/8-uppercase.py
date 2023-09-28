@@ -6,4 +6,3 @@ def uppercase(str):
                 print("{:s}".format(char), end="")
         else:
             print("{:s}".format(str[i]), end="")
-    print("")
