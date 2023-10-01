@@ -4,4 +4,4 @@ if __name__ == "__main__":
     list_names = dir(hidden_4)
     for name in list_names:
         if not name[:2] == '__':
-                print("{:s}".format(name))
+            print("{:s}".format(name))
