@@ -5,4 +5,3 @@ def uniq_add(my_list=[]):
         if my_list[i] not in my_list[:i]:
             res += my_list[i]
     return (res)
-
