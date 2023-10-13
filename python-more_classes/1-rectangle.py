@@ -1,4 +1,4 @@
-#!/usr/bin/piython3
+#!/usr/bin/python3
 """Define a class representing a rectangle"""
 
 
@@ -13,7 +13,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Initializing the rectangle with the given width and height.
+        Initialize the rectangle with the given width and height.
 
         Parameters:
         - width (int): The width of the rectangle.
@@ -30,7 +30,7 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """
-        Setting rectangle's width.
+        Set the width of the rectangle.
 
         Parameters:
         - value (int): The width value to be set.
