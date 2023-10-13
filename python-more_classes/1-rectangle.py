@@ -1,5 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/piython3
 """Define a class representing a rectangle"""
+
 
 class Rectangle:
     """
@@ -68,4 +69,3 @@ class Rectangle:
             raise ValueError("Height must be >= 0")
         else:
             self.__height = value
-
