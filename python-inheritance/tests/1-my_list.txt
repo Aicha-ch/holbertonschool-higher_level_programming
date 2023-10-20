@@ -16,3 +16,7 @@ TypeError: descriptor 'append' for 'list' objects doesn't apply to a 'str' objec
 [1, 4, 2, -6]
 >>> my_list.print_sorted()
 [-6, 1, 2, 4]
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+>>>
