@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-""" function that prints a text """
+""" print a text """
 
 
 def text_indentation(text):
-    """
-        new line printing
-
-        Raise:
-            TypeError: text must be a string
-    """
+    """ print a text """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    x = 0
+    for i in text:
+        if x == 0:
+            if i == ' ':
+                continue
+            x = 1
 
-    new_text = ""
-    for string in text:
-        new_text += string
-        if string in [".", "?", ":"]:
-            new_text += "\n\n"
-
-    print(new_text)
+        if x == 1:
+            if i in ".?:":
+                print(i + '\n')
+                x = 0
+            else:
+                print(i, end='')
