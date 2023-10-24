@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""class"""
+""" calss """
 
 
 class Base:
-"""base class"""
-
+    """ base class """
 
     __nb_objects = 0
 
