@@ -24,8 +24,11 @@ class Rectangle(Base):
         """Rectangle instance"""
 
 
+        super().__init__(id)
+        """Set private attributes"""
+
+
         self.__width = width
         self.__height = height
         self.x = x
         self.y = y
-        super().__init__(id)
