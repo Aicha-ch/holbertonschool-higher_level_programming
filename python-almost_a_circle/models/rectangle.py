@@ -17,10 +17,13 @@ class Base:
 
 
 class Rectangle(Base):
-    """Rectangle class (child)"""
+    """Rectangle class inherits from Base"""
 
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Rectangle instance"""
+
+
         self.__width = width
         self.__height = height
         self.x = x
