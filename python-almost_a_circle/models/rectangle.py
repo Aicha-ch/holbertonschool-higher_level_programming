@@ -92,6 +92,7 @@ class Rectangle(Base):
                 self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args):
+        """define method"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
