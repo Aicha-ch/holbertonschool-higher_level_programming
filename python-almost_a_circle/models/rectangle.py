@@ -76,7 +76,8 @@ class Rectangle(Base):
         return rect_area
 
     def display(self):
-        for i in range(self.height):
-            for j in range(self.width):
+        """ Public method to display the Rectangle instance """
+        for i in range(self.__height):
+            for j in range(self.__width):
                 print("#", end="")
             print()
