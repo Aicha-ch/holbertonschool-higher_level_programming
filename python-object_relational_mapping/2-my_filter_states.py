@@ -6,16 +6,17 @@ import MySQLdb
 
 if __name__ == "__main__":
     # Check if the expected number of command-line arguments is provided
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print("Usage: ./1-filter_states.py <username> <password> <database>")
         sys.exit(1)
 
     username: str = sys.argv[1]
     password: str = sys.argv[2]
     db_name: str = sys.argv[3]
+    state_name: str = sys.argv[4]
     host: str = "localhost"
     port: int = 3306
-    statement: str = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+    statement: str = "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(state_name)
 
     db = MySQLdb.connect(
         user=username,
