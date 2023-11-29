@@ -6,27 +6,12 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-
-    ''' variables declaration '''
-    username: str = sys.argv[1]
-    password: str = sys.argv[2]
-    db_name: str = sys.argv[3]
-    host: str = "localhost"
-    port: int = 3306
-    statement: str = """SELECT * FROM states ORDER BY id"""
-
     ''' Connect to MySQL server running locally on port 3306 '''
-    db = MySQLdb.connect(
-        user=username,
-        host=host,
-        port=port,
-        password=password,
-        database=db_name,
-    )
+    db = MySQLdb.connect(user=sys.argv[1], password=sys.argv[2], db=sys.argv[3], port=3306)
 
     ''' Execute an SQL query to fetch all states '''
-    cursor = db.cursor()
-    cursor.execute(statement)
+    cur = db.cursor()
+    cur = cursor.execute("SELECT * FROM states ORDER BY id")
     rows = cursor.fetchall()
 
     ''' Print the results in the desired format '''
