@@ -16,6 +16,6 @@ if __name__ == "__main__":
     with conn.cursor() as cur:
         cur.execute("SELECT * FROM states ORDER BY id ASC")
         for row in cur.fetchall():
-            print(row)
+            print("({}, '{}')".format(row[0], row[1]))
 
     conn.close()
