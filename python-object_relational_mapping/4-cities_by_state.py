@@ -1,39 +1,19 @@
 #!/usr/bin/python3
-"""Lists all cities from the database hbtn_0e_4_usa
-"""
-import sys
+""" script that lists all cities from the database hbtn_0e_4_usa  """
+
 import MySQLdb
+import sys
+
 
 if __name__ == "__main__":
-    username: str = sys.argv[1]
-    password: str = sys.argv[2]
-    db_name: str = sys.argv[3]
-    host: str = "localhost"
-    port: int = 3306
-    statement: str = """SELECT * FROM cities ORDER BY id"""
-    
-    # Connect to MySQL server
-    db = MySQLdb.connect(
-        user=username,
-        host=host,
-        port=port,
-        password=password,
-        database=db_name,
-    )
-    
-    # Create a cursor object
-    cursor = db.cursor()
-    
-    # Execute the SQL statement
-    cursor.execute(statement)
-    
-    # Fetch all the rows
-    rows = cursor.fetchall()
-    
-    # Print the results
-    for row in rows:
-        print(row)
-    
-    # Close the cursor and database connection
-    cursor.close()
-    db.close()
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                           passwd=sys.argv[2], db=sys.argv[3])
+    with conn.cursor() as cur:
+        cur.execute("SELECT cities.id, cities.name, states.name FROM cities\
+                JOIN states ON cities.state_id = states.id\
+                ORDER BY cities.id ASC")
+
+        for row in cur.fetchall():
+            print(row)
+
+    conn.close()
